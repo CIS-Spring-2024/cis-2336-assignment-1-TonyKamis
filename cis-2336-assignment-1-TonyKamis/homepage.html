@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Suave Cafe</title>
+    <link rel="stylesheet" href="slider.css">
+
+    <style>
+        body {
+    background-image:url('CIS2336WORK/html/images/redbackground.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+
+        
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center; /* Center align content */
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            display: inline-block; /* Display links as inline blocks */
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        header {
+            background-color: #e6240e;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        .menu-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 40%
+        }
+        #lunches p {
+            margin-bottom: 10px; }
+        
+        .menu-box p {
+            margin: 0; 
+        }
+        #h1 {
+            color: #ddd;
+        }
+        footer {
+            background-color: #333;
+            padding:2px;
+            text-align: center;
+            
+        }
+    
+        
+    </style>
+</head>
+<body> 
+    <header>
+        <h1>Welcome to Suave Cafe!</h1>
+    </header> 
+    <div class="topnav">
+        <a href="homepage.html">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Nutrition and Wellness</a>
+        <a href="#">Orders</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Menu Section Part -->
+    <h1>Lunches for the Week</h1>
+    <div class="menu-box">
+        <div id="lunches"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+            const lunches = {
+                'Monday': 'Baked Potato with Cheese, with a side of Caesar Salad',
+                'Tuesday': 'Chicken Teriyaki and Rice, with a side of Egg Rolls',
+                'Wednesday': 'Nacho Cheese Platter with Chips and Beef, with a side of Refried Beans',
+                'Thursday': 'BBQ Chicken Sandwich, with a side of fries',
+                'Friday': 'Grilled Salmon, with a side of white rice'
+            };
+    
+            const lunchContainer = document.getElementById('lunches');
+            let lunchHtml = '<ul>'; // Start unordered list
+    
+            week.forEach(day => {
+                lunchHtml += `<li>${day}: ${lunches[day]}</li>`; // List item for each day
+            });
+    
+            lunchHtml += '</ul>'; // End unordered list
+            lunchContainer.innerHTML = lunchHtml;
+        });
+    </script>
+    
+
+<!--Image slider-->
+
+<section class="container">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img id="slide-1" src="CIS2336WORK/html/images/bakedpotato.jpg" alt="Baked Potato Picture">
+            <img id="slide-2" src="CIS2336WORK/html/images/teryaki.jpg" alt="Chicken Teriyaki with rice">
+            <img id="slide-3" src="CIS2336WORK/html/images/nacho.jpg" alt="Nacho Cheese Platter">
+            <img id="slide-4" src="CIS2336WORK/html/images/BBQ sandwich.jpg" alt="BBQ Chicken Sandwich with fries">
+            <img id="slide-5" src="CIS2336WORK/html/images/grilled chicken.jpg" alt="Grilled Salmon and Rice">
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+            <a href="#slide-5"></a>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="slider-wrapper">
+        <div class="slider-nav"></div>
+    </div>
+    <p class="slider-caption">Slide through the photos to see your lunch schedule for the week!</p>
+</section>
+
+<footer>
+    <p> 2024 Suave Cafe. All rights reserved.</p>
+    <p>Contact us at info@suavecafe.com</p>
+</footer>
+</body>
+</html>
+
